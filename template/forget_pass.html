@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELITE</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style type="text/css">
+  	
+  	@media (min-width: 576px) { 
+		.card{
+  			width: 20rem;
+  			margin-left: 25vw;
+  			margin-top:25vh
+  		}
+  	}
+  	@media(min-width: 767px){
+  		.card{
+  			width: 30rem;
+  			margin-left:30vw;
+  			margin-top:19vh
+  		}
+  	}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Reset Password</h5>
+    <div class="card-text">
+    <form method="POST" action="/password-reset-done/" oninput='cp.setCustomValidity(cp.value != np.value ? "Passwords do not match." : "")'>
+    	{% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">New Password</label>
+    <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    required="True" name="np">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Confirm password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" required="True" name="cp">
+  </div>
+  <div class="form-group" style="visibility:hidden;">
+  	<label for="exampleInputPassword1">Conf</label>
+    <input class="form-control" name="id_u" value={{uid}} >
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-top:-65px;margin-left:40%">Submit</button>
+</form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
